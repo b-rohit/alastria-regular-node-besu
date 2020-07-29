@@ -33,9 +33,9 @@ services:
     image: alethio/ethereum-lite-explorer
     container_name: explorer
     environment:
-      - APP_NODE_URL=http://localhost:8545
+      - APP_NODE_URL=http://${BESU_P2P_HOST}:8545
     ports:
-      - 3000:80/tcp
+      - 8080:80/tcp
     depends_on:
       - besu
 
