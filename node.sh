@@ -4,7 +4,7 @@
 HOST_IP=`dig +short myip.opendns.com @resolver1.opendns.com 2>/dev/null || curl -s --retry 2 icanhazip.com`
 if [ -z "$HOST_IP" ]
 then
-  export BESU_P2P_HOST=0.0.0.0
+  export BESU_P2P_HOST=127.0.0.1
   HOST_IP=127.0.0.1
 else
   export BESU_P2P_HOST=$HOST_IP
@@ -24,6 +24,7 @@ function printHelp() {
 
 function listEndpoints() {
   # displays services list with port mapping
+  sleep 5s
   docker-compose ps
   echo "*************************************************************"
   echo "JSON-RPC HTTP service endpoint      : http://${HOST_IP}:8545"
@@ -32,36 +33,42 @@ function listEndpoints() {
 }
 
 function upNode() {
-  echo "up"
+  echo "up node"
+  echo "--------------------------"
   # create containers
   docker-compose up -d
   listEndpoints
 }
 
-
 function downNode() {
-  echo "down"
+  echo "down node"
+  echo "--------------------------"
   # remove containers
   docker-compose down -v
 }
 
 function pauseNode() {
-  echo "pause"
+  echo "pause node"
+  echo "--------------------------"
   # stop containers
   docker-compose stop
+  docker-compose ps
 }
 
 function resumeNode() {
-  echo "resume"
+  echo "resume node"
+  echo "--------------------------"
   # start containers
   docker-compose start
   listEndpoints
 }
 
 function restartNode() {
-  echo "restart"
+  echo "restart node"
+  echo "--------------------------"
   # restart containers
   docker-compose stop
+  echo "sleeping 20s"
   sleep 20s
   docker-compose start
   listEndpoints
