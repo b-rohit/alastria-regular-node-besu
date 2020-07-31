@@ -6,7 +6,7 @@ This repository is based on the [Alastria Node Besu](https://github.com/alastria
 
 ## Prerequisites
 
-You need to install Docker and Docker Compose. I have put the [installation guidelines](requirements) to make it easy for you.
+You need to install Docker and Docker Compose. I have put the [installation guidelines](requirements.md) to make it easy for you.
 
 ## Deployment
 
