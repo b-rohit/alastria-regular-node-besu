@@ -18,7 +18,7 @@ You need to install Docker and Docker Compose. I have put the [installation guid
 
    ```
    cd alastria-regular-node-besu
-   docker container run -v `pwd`/keys/besu:/data -w /data -it --rm hyperledger/besu:1.4 --data-path=/data public-key export --to=/data/key.pub
+   ./node.sh key
    ```
 
    This is one time operation. The aforementioned command will run a docker container with [hyperledger/besu](https://hub.docker.com/r/hyperledger/besu) image and generate keys in key folder in the current directory. Keep your private key safe, do not reveal it.
