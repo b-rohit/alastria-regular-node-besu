@@ -9,6 +9,8 @@ then
 else
   export BESU_P2P_HOST=$HOST_IP
 fi
+# cd to current directory
+cd "$(dirname "$0")"
 
 # Print the usage message
 function printHelp() {
