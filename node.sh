@@ -76,6 +76,11 @@ function restartNode() {
   listEndpoints
 }
 
+function generatateKey() {
+  echo "key generation"
+  docker container run -v `pwd`/keys/besu:/data -w /data -it --rm hyperledger/besu:1.4.3 --data-path=/data public-key export --to=/data/key.pub
+}
+
 if [ "$1" = "-m" ]; then # supports old usage, muscle memory is powerful!
   shift
 fi
@@ -93,6 +98,8 @@ elif [ "$MODE" == "resume" ]; then
   resumeNode
 elif [ "$MODE" == "restart" ]; then
   restartNode
+elif [ "$MODE" == "key" ]; then
+  generatateKey
 else
   printHelp
   exit 1
