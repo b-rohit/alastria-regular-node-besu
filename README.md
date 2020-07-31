@@ -46,13 +46,35 @@ You need to install Docker and Docker Compose. I have put the [installation guid
 
 ## Registration
 
-After successful deployment, you need to register the node to access the Alastria Network B because it is a private permissioned blockchain network. The steps are following.
+After successful deployment, you need to register the node to access the Alastria Network B because it is a private permissioned blockchain network. The steps are following:
 
 1. Get your enode
    ```
    curl -X POST --data '{"jsonrpc":"2.0","method":"net_enode","params":[],"id":1}' http://127.0.0.1:8545
    ```
 2. Fill in the [electronic form](https://portal.r2docuo.com/alastria/forms/noderequest) and submit.
+
+## Systemd Service
+
+Although it is an optional step, it is quite useful to manage your docker containers using a service. The service will stop the containers during system shutdown and start them again automatically on system startup without loosing container data. The steps to configure the service are following:
+
+1. Set the repo path in the besu-node.service and copy it to /etc/systemd/system
+   ```
+   sudo cp service/besu-node.service /etc/systemd/system
+   ```
+2. Enable the service
+
+   ```
+   sudo systemctl enable besu-node
+   ```
+
+This is all. It will enable the service to manage the containers at system reboot. You can start, stop, and check status of the service using following commands.
+
+```
+sudo systemctl start besu-node
+sudo systemctl stop besu-node
+sudo systemctl status besu-node
+```
 
 ## Usage
 
