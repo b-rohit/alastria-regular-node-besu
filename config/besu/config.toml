@@ -16,3 +16,5 @@ rpc-http-host="0.0.0.0"
 rpc-http-cors-origins=["all"]
 rpc-http-api=["ETH","NET","IBFT","WEB3","ADMIN"]
 logging="DEBUG"
+rpc-http-authentication-enabled=true
+rpc-http-authentication-jwt-public-key-file="/config/besu/publicKey.pem"
