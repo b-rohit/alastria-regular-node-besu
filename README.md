@@ -79,3 +79,6 @@ sudo systemctl status besu-node
 ## Usage
 
 You can interact with the besu node using [HTTP JSON RPC requests](https://besu.hyperledger.org/en/stable/Reference/API-Methods/) on port 8545. The Prometheus and Block Explorer dashboards can be accessed on http://127.0.0.1:9090 and http://127.0.0.1:8080 respectively.
+
+### Enable JWT authentication
+Follow the [JWT documentation](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Authentication/#jwt-public-key-authentication).
