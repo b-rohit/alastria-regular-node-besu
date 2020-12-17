@@ -10,6 +10,7 @@ services:
       - 30303:30303/tcp
       - 8545:8545
       - 9545:9545
+      - 8546:8546
     volumes:
       - ./config/besu:/config/besu/
       - ./keys/besu/key:/opt/besu/data/key
