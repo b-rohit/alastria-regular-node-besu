@@ -1,21 +1,38 @@
-bootnodes=["enode://abe1d7baf32e88849526f01369bd432119188ff3f8e369d1abab89e75e14557c33322ea8eced2ab2b4722cf3e3301ef5af9385411c509060e97aa35f1ea1b60c@158.176.139.92:30303","enode://76af726fa65c4a1fb6e150960eda7e5ac12a58f34dc544911190c44ee32dff3357a5c323639626e9b35e5c3fef4e2a07b21dc82d099560808ae8e4ae870425d5@5.153.57.78:30303","enode://78b88a6083341d0a5abfadd3693a28254f0a8eb8a13f92ceadaa359b4125ba2dc625b690a5223aa5c642e43cabc4e1ee57d36a79b432a0f53fcc6aaa5b242125@40.114.213.19:30303","enode://da605e412affd7c8767050f19bc227b020751f4c8b03736ff47df428c7aaef0b11bfec4d835a33a00c62c06e5ef26df20c2550bd7efd91c04d377358f73c88e9@34.247.92.155:30303","enode://2971636ddd7cdbedd726efffd90a5ad95a344108a1ece1494ac6e61e4fe7c9c66ad6660c51d768726341c0ee64d13fe6672dc59707793766cb1af29c4133b633@52.210.245.209:30303"]
+# network
+bootnodes=["enode://20c1378ff3b8ce6e53b914a413f00e2590ee85491af529f976aef8cff96a649afff14262dee0273ed7a11ca2adc8a6f7918c0a42303a2e13cbea8a89961425ad@54.216.131.145:30303","enode://d932021d575318127df537f788195195c13c7084db3376c0f030b68dae32f3ce44291b9aadad1451c8857a84d9c9be3253a7ac7cd429bc3fe930427e26043a28@13.80.245.21:30303","enode://8b4b387ad13980045c881b1b79433c3505aff07053388dc509c4097c925cbecf8d1eefc2566aad02e6f44bb489d5d16073962ac71f0bf1f9f6c4527115f68748@37.58.77.12:30303"]
 data-path="/opt/besu/data"
+
+# chain
 genesis-file="/config/besu/genesis.json"
 min-gas-price=0
+
+# permissions
 permissions-accounts-contract-address="0x0000000000000000000000000000000000008888"
 permissions-accounts-contract-enabled=false
 permissions-nodes-contract-address="0x0000000000000000000000000000000000009999"
 permissions-nodes-contract-enabled=true
 host-whitelist=["*"]
-metrics-enabled=true
+
+# metrics
+metrics-enabled=false
 metrics-host="0.0.0.0"
 metrics-port="9545"
-rpc-ws-enabled=true
+
+# websocket
+rpc-ws-enabled=false
 rpc-ws-host="0.0.0.0"
+rpc-ws-port="8546"
+
+# http
 rpc-http-enabled=true
 rpc-http-host="0.0.0.0"
+rpc-http-port="8545"
 rpc-http-cors-origins=["all"]
 rpc-http-api=["ETH","NET","IBFT","WEB3","ADMIN"]
-logging="WARN"
-rpc-http-authentication-enabled=false
-rpc-http-authentication-jwt-public-key-file="/config/besu/publicKey.pem"
+
+# logging
+logging="INFO"
+
+# uncomment if if you want to enable http authentication
+# rpc-http-authentication-enabled=false
+# rpc-http-authentication-jwt-public-key-file="/config/besu/publicKey.pem"

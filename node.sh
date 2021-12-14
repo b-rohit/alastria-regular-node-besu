@@ -30,8 +30,6 @@ function listEndpoints() {
   docker-compose ps
   echo "*************************************************************"
   echo "JSON-RPC HTTP service endpoint      : http://${HOST_IP}:8545"
-  echo "Web block explorer address          : http://${HOST_IP}:8080/"
-  echo "Prometheus address                  : http://${HOST_IP}:9090/graph"
 }
 
 function upNode() {

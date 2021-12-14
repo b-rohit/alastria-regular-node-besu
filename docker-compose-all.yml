@@ -1,0 +1,45 @@
+version: "3"
+services:
+  besu:
+    image: hyperledger/besu:21.10
+    container_name: besu
+    environment:
+      - BESU_P2P_HOST=${BESU_P2P_HOST}
+    ports:
+      - 30303:30303/udp
+      - 30303:30303/tcp
+      - 8545:8545
+      - 9545:9545
+      - 8546:8546
+    volumes:
+      - ./config/besu:/config/besu/
+      - ./keys/besu/key:/opt/besu/data/key
+      - besu-database:/opt/besu/data/database
+    command: ["--config-file=/config/besu/config.toml"]
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090/tcp
+    depends_on:
+      - besu
+
+  explorer:
+    image: alethio/ethereum-lite-explorer
+    container_name: explorer
+    environment:
+      - APP_NODE_URL=http://${BESU_P2P_HOST}:8545
+    ports:
+      - 8080:80/tcp
+    depends_on:
+      - besu
+
+volumes:
+  besu-database:
+  prometheus:
