@@ -3,6 +3,8 @@ services:
   besu:
     image: hyperledger/besu:20.10.3
     container_name: besu
+    # check uid and gid using id command on your host
+    user: "UID:GID"
     environment:
       - BESU_P2P_HOST=${BESU_P2P_HOST}
     ports:
@@ -17,3 +19,4 @@ services:
       - ./keys/besu/key:/opt/besu/keys/key
       - ./besu-backup:/opt/besu/data/
     command: ["--config-file=/config/besu/config.toml"]
+
