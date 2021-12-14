@@ -45,7 +45,7 @@ function downNode() {
   echo "down node"
   echo "--------------------------"
   # remove containers
-  docker-compose down -v
+  docker-compose down
 }
 
 function pauseNode() {
