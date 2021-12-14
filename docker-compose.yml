@@ -1,7 +1,7 @@
 version: "3"
 services:
   besu:
-    image: hyperledger/besu:1.4.3
+    image: hyperledger/besu:20.10.3
     container_name: besu
     environment:
       - BESU_P2P_HOST=${BESU_P2P_HOST}
@@ -14,9 +14,6 @@ services:
     #  - 8546:8546
     volumes:
       - ./config/besu:/config/besu/
-      - ./keys/besu/key:/opt/besu/data/key
-      - besu-database1:/opt/besu/data/database
-    command: ["--config-file=/config/besu/config.toml", "‐Dlog4j2.formatMsgNoLookups=True"]
-
-volumes:
-  besu-database1:
+      - ./keys/besu/key:/opt/besu/keys/key
+      - ./besu-backup:/opt/besu/data/
+    command: ["--config-file=/config/besu/config.toml"]

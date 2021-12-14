@@ -24,10 +24,13 @@ You need to install Docker and Docker Compose. I have put the [installation guid
    This is one time operation. The aforementioned command will run a docker container with [hyperledger/besu](https://hub.docker.com/r/hyperledger/besu) image and generate keys in key folder in the current directory. Keep your private key safe, do not reveal it.
 
 3. Launch Node
+
    ```
    ./node.sh up
    ```
+
    The command will spin up 3 docker containers namely besu, prometheus, and explorer. The besu container is the most important of all as it is your regular besu node. The [config.toml](config/besu/config.toml) and [genesis.json](config/besu/genesis.json) files are used to configure the besu node. You can make changes in the config.toml file to change the behavior of the node. You don’t need to touch the genesis.json file. The command will give output similar to following
+
    ```
    Starting besu       ... done
    Starting prometheus ... done
@@ -42,6 +45,12 @@ You need to install Docker and Docker Compose. I have put the [installation guid
    JSON-RPC HTTP service endpoint      : http://127.0.0.1:8545
    Web block explorer address          : http://127.0.0.1:8080/
    Prometheus address                  : http://127.0.0.1:9090/graph
+   ```
+
+   start the besu node directly.
+
+   ```
+   docker run --rm -v `pwd`/keys/besu/key:/opt/besu/keys/key -v `pwd`/config/besu:/config/besu hyperledger/besu:20.10.3 --config-file=/config/besu/config.toml
    ```
 
 ## Registration
@@ -81,4 +90,5 @@ sudo systemctl status besu-node
 You can interact with the besu node using [HTTP JSON RPC requests](https://besu.hyperledger.org/en/stable/Reference/API-Methods/) on port 8545. The Prometheus and Block Explorer dashboards can be accessed on http://127.0.0.1:9090 and http://127.0.0.1:8080 respectively.
 
 ### Enable JWT authentication
+
 Follow the [JWT documentation](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Authentication/#jwt-public-key-authentication).
