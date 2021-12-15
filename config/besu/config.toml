@@ -16,6 +16,9 @@ node-private-key-file="/opt/besu/keys/key"
 genesis-file="/config/besu/genesis.json"
 min-gas-price=0
 
+# Comment this flag if you are using a lower version than 20.10.1
+compatibility-eth64-forkid-enabled=true
+
 # permissions
 permissions-accounts-contract-address="0x0000000000000000000000000000000000008888"
 permissions-accounts-contract-enabled=false
