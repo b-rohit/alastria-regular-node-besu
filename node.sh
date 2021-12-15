@@ -36,7 +36,7 @@ function upNode() {
   echo "up node"
   echo "--------------------------"
   # create containers
-  #mkdir besu-backup
+  mkdir besu-backup
   docker-compose up -d
   listEndpoints
 }
