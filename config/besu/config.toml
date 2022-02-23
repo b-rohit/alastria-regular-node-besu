@@ -7,6 +7,7 @@ bootnodes=[
 ]
 
 data-path="/opt/besu/data"
+static-nodes-file="/config/besu/static-nodes.json"
 node-private-key-file="/opt/besu/keys/key"
 
 discovery-enabled=false
