@@ -9,6 +9,8 @@ bootnodes=[
 data-path="/opt/besu/data"
 node-private-key-file="/opt/besu/keys/key"
 
+discovery-enabled=false
+
 # chain
 genesis-file="/config/besu/genesis.json"
 min-gas-price=0
