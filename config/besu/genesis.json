@@ -3,7 +3,7 @@
     "chainId": 2020,
     "constantinoplefixblock": 0,
     "ibft2": {
-      "blockperiodseconds": 2,
+      "blockperiodseconds": 1,
       "epochlength": 30000,
       "requesttimeoutseconds": 10
     }
@@ -15,17 +15,9 @@
   "mixHash": "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
   "coinbase": "0x0000000000000000000000000000000000000000",
   "alloc": {
-    "0x3C1eB70aE4e6EECF5353Ce0104b56d27f819409B": {
-      "comment": "Sngular Preprovisioning Account",
-      "balance": "0x5CA4EC2A79A7F67000000"
-    },
-    "0xF3E77F2d04B93a0e1b0655F7504a9739f3a1c1eF": {
-      "comment": "SigneBlock Preprovisioning Account",
-      "balance": "0x5CA4EC2A79A7F67000000"
-    },
-    "0xC5E0Aae3C913c76F6338835e4D803f8774Fa0bA5": {
-      "comment": "Eurogestion Preprovisioning Account",
-      "balance": "0x5CA4EC2A79A7F67000000"
+    "0x94819810eeb5F32d881f50F3AA1Cd35D9cF9DDdc": {
+      "comment": "Alastria Preprovisioning Account",
+      "balance": "0x115EEC47F6CF7E35000000"
     },
     "0x0000000000000000000000000000000000008888": {
       "comment": "Account Ingress smart contract",
@@ -48,5 +40,5 @@
       }
     }
   },
-  "extraData": "0xf87ea00000000000000000000000000000000000000000000000000000000000000000f854948c0b92801cc7fdc62f74b7c0c248053fe92f99599420c5b6250f99e3c41d8ae1593eef0520e4e3fcc194ab601b7d7382e24eecb369e508c2de2e710d88d6946f81cf8b4e36b4ae99567d2c96b8a4ca40585e92808400000000c0"
+  "extraData": "0xf87ea00000000000000000000000000000000000000000000000000000000000000000f854942d1d60dd4fdb77bc71cdeb62bade4a3606929ced944b3cc96cc615ab4d46ac0bc8fff5cb4fa77cac9294283c714b9d58173e5f89c2f0d9476a92cf9ac9f4947303144c5f64cee173569f2b884a22fdae835155808400000000c0"
 }
