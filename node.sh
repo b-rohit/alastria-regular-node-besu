@@ -78,7 +78,7 @@ function restartNode() {
 function generatateKey() {
   echo "key generation"
   mkdir -p keys/besu
-  docker container run -v `pwd`/keys/besu:/data -w /data -it --rm hyperledger/besu:20.10.3 --data-path=/data public-key export --to=/data/key.pub
+  docker container run -v `pwd`/keys/besu:/data -w /data -it --rm hyperledger/besu:22.1.0 --data-path=/data public-key export --to=/data/key.pub
 }
 
 if [ "$1" = "-m" ]; then # supports old usage, muscle memory is powerful!
